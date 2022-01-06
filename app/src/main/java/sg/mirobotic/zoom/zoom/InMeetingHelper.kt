@@ -1,4 +1,4 @@
-package np.com.naveenniraula.zoomsdk
+package sg.mirobotic.zoom.zoom;
 
 import us.zoom.sdk.*
 

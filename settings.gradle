@@ -1,4 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs 'app/libs'
+        }
+    }
+}
+rootProject.name = "MI Glass"
+include ':app'
 include ':mobilertc'
 include ':commonlib'
-include ':app'
-rootProject.name = "Zoom Sdk"

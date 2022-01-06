@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_path"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="sg.mirobotic.zoom.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createMeetingFragment2"
+            app:destination="@id/createMeetingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_meetingListFragment"
+            app:destination="@id/meetingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinMeetingFragment"
+        tools:layout="@layout/fragment_join_meeting"
+        android:name="sg.mirobotic.zoom.ui.fragments.JoinMeetingFragment"
+        android:label="JoinMeetingFragment" >
+        <argument
+            android:name="meeting"
+            app:argType="sg.mirobotic.zoom.data.Meeting" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/fragment_login"
+        android:name="sg.mirobotic.zoom.ui.fragments.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/createMeetingFragment"
+        tools:layout="@layout/fragment_create_meeting"
+        android:name="sg.mirobotic.zoom.ui.fragments.CreateMeetingFragment"
+        android:label="CreateMeetingFragment" />
+    <fragment
+        android:id="@+id/meetingListFragment"
+        tools:layout="@layout/fragment_meeting_list"
+        android:name="sg.mirobotic.zoom.ui.fragments.MeetingListFragment"
+        android:label="MeetingListFragment" >
+        <action
+            android:id="@+id/action_meetingListFragment_to_joinMeetingFragment"
+            app:destination="@id/joinMeetingFragment" />
+    </fragment>
+</navigation>

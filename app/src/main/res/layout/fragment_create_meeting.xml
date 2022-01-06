@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/space_l"
+    android:gravity="center"
+    tools:context=".ui.fragments.CreateMeetingFragment">
+
+    <TextView
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meeting Type"/>
+
+    <RadioGroup
+        android:id="@+id/rgMeetingType"
+        android:layout_marginTop="@dimen/space_s"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbInstant"
+            android:layout_weight="1"
+            android:text="Instant Meeting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/rbSchedule"
+            android:layout_weight="1"
+            android:text="Schedule Meeting"
+            android:layout_width="0dp"
+            android:checked="true"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/title"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Meeting Title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/agenda"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Meeting Agenda">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAgenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/titleDate"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:gravity="center_vertical"
+        android:textColor="@color/zm_ui_kit_color_blue_0E71EB"
+        android:layout_marginTop="@dimen/space_s"
+        android:text="@string/select_date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_s"/>
+
+    <TextView
+        android:id="@+id/titleTile"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time" />
+
+    <TextView
+        android:id="@+id/time"
+        android:gravity="center_vertical"
+        android:textColor="@color/zm_ui_kit_color_blue_0E71EB"
+        android:layout_marginTop="@dimen/space_s"
+        android:text="@string/select_date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_s"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/duration"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Duration (in minutes)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:maxLength="3"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_marginTop="@dimen/space_l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Meeting"/>
+
+</LinearLayout>

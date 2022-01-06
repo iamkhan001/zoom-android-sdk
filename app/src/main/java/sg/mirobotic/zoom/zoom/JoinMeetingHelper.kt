@@ -1,4 +1,5 @@
-package np.com.naveenniraula.zoomsdk
+package sg.mirobotic.zoom.zoom;
+
 
 import android.content.Context
 import us.zoom.sdk.*
