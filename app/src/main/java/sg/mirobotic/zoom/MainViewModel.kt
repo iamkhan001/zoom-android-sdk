@@ -8,16 +8,13 @@ import sg.mirobotic.zoom.conf.Credentials
 import sg.mirobotic.zoom.data.*
 import sg.mirobotic.zoom.data.local.UserDataProvider
 import sg.mirobotic.zoom.data.remote.ApiResponseListener
-import sg.mirobotic.zoom.data.remote.FirestoreRepository
 import sg.mirobotic.zoom.data.remote.WebRepository
-import sg.mirobotic.zoom.zoom.InMeetingHelper
 import sg.mirobotic.zoom.zoom.JoinMeetingHelper
 import us.zoom.sdk.*
 import us.zoom.sdk.ZoomSDK
 
 class MainViewModel: ViewModel(), ZoomSDKInitializeListener, ZoomSDKAuthenticationListener, PreMeetingServiceListener, MeetingServiceListener {
 
-    private val firestoreRepository = FirestoreRepository.getInstance()
     lateinit var zoom: ZoomSDK
     private var onZoomSdkStatusListener: OnZoomSdkStatusListener? = null
 
@@ -47,8 +44,6 @@ class MainViewModel: ViewModel(), ZoomSDKInitializeListener, ZoomSDKAuthenticati
         email.value = userDataProvider.getEmail()
         webRepository = WebRepository.getInstance(email)
     }
-
-
 
     fun login() {
         val email = userDataProvider.getEmail()
@@ -130,28 +125,8 @@ class MainViewModel: ViewModel(), ZoomSDKInitializeListener, ZoomSDKAuthenticati
         }
     }
 
-    fun startMeeting(context: Context, meetingDetails: MeetingDetails, apiResponseListener: ApiResponseListener<MeetingDetails>) {
-        Log.e(TAG,"startMeeting")
-    }
-
-    fun getUpdates(updateListener: InMeetingHelper.MeetingUpdateListener){
-        Log.e(TAG,"getUpdates")
-        InMeetingHelper.getUpdates(zoom, updateListener)
-    }
-
-
-    fun getInstantMeeting(apiResponseListener: ApiResponseListener<MeetingDetails>) {
-        firestoreRepository.getInstantMeetingUpdates(apiResponseListener)
-    }
-
-    fun isUserLogin(): Boolean = zoom.isLoggedIn
-
     fun createMeetings(meetingDetails: MeetingDetails, apiResponseListener: ApiResponseListener<MeetingDetails>) {
         webRepository.addMeeting(meetingDetails, apiResponseListener)
-    }
-
-    fun saveMeeting(meetingDetails: MeetingDetails) {
-        firestoreRepository.saveMeeting(meetingDetails, null )
     }
 
     var mMeetings = MutableLiveData<ArrayList<Meeting>>()
