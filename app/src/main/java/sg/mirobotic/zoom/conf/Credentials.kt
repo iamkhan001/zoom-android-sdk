@@ -12,8 +12,8 @@ class Credentials {
 
     companion object {
 
-        var SDK_KEY = "az3jMfxhHIYWeKoHenNV2ULL7KkSkFRK1EWv"
-        var SDK_SECRET = "8af8ShsEz07eL6FDjVeu9XmBG4edJIixVKpV"
+        var SDK_KEY = "YOUR SDK KEY"
+        var SDK_SECRET = "YOUR SECRET KEY"
         var SDK_DOMAIN = "zoom.us"
 
         @JvmStatic
@@ -49,7 +49,7 @@ class Credentials {
                 token = ""
             }
             Log.e("CRED","JWT $token")
-            return "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IjVNUHV4ZTR5UVYtYldHclFYU1N1ZUEiLCJleHAiOjE2NDg3NTEzOTksImlhdCI6MTY0MTI3NjgxOH0.yyppd6thcgti7NhfMYx3jUJiU1RpJr-Dipa3hTx4914"
+            return token
         }
     }
 
